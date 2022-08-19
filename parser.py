@@ -5,8 +5,8 @@ from csv import DictReader, reader
 import csv
 import re
 
-products = "./products_export_1.csv" #"./Shopify-Production-VN47_1-2.csv" 
-#products = "./Shopify-Production-VN47_1-2.csv"
+#products = "./products_export_1.csv" #"./Shopify-Production-VN47_1-2.csv" 
+products = "./Shopify-Production-VN47_1-2.csv"
 
 
 path_sifr = {
@@ -105,7 +105,7 @@ def getFromHTML(html, key):
         "clip":'Clip on</span><b class="data">',
         "progresiva":'Progresiva</span><b class="data">',
         "material":'Material</span><b class="data">',
-        "barva_stekla":'<h3>Lastnosti stekel</h3>\n  <li>\n<span class="label">Barva</span><b class="data">',
+        "barva_stekla":'<h3>Lastnosti stekel</h3>\n  <li><span class="label">Barva</span><b class="data">',
         "polarization":'Polarizacija</span><b class="data">',
         "vzorec":'Obdelava</span><b class="data">',
     }

@@ -12,11 +12,10 @@ conn = psycopg2.connect(
 
 cursor = conn.cursor()
 
-cursor.execute("select TRIM(koda), TRIM(p.skladisce), p.zaloga \
+cursor.execute("select TRIM(p.koda), TRIM(p.skladisce), p.zaloga, p.mpcena, p.vrstams_naziv, p.vrstams  \
             from helios_zaloga_extended() p\
-            where 1=1 and koda SIMILAR TO '[0-9]+' \
-            and ((vrstams='401' and vrstams_naziv='Sončna očala') or (vrstams='200' and vrstams_naziv='Korekcijski okvirji')) \
-            order by koda")
+            where 1=1 and TRIM(p.koda) LIKE '716736193663' \
+            order by p.koda")
 
 data = cursor.fetchall()
 
